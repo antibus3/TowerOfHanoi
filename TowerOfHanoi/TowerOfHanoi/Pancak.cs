@@ -10,22 +10,30 @@ namespace TowerOfHanoi
     public class Pancak
     {
         private Rectangle _PancakVisible;
-        private Pen _PenOfPancak;
+        private Brush _BrushOfPancak;
+
+        
 
 
         public Pancak ()
         { }
 
-        public Pancak (int width, Pen pen)
+        public Pancak(int width, int x, Brush brush)
         {
-            _PancakVisible = new Rectangle(0, 0, width, 10);
-            _PenOfPancak = pen;
+            _PancakVisible = new Rectangle(x, 0, width, 10);
+            _BrushOfPancak = brush;
         }
 
         //  Метод, отображающий блинчик на оси
         public void Draw (Graphics g)
         {
-            g.DrawRectangle(_PenOfPancak, _PancakVisible);
+            g.DrawRectangle(Pens.Black, _PancakVisible);
+            g.FillRectangle(_BrushOfPancak, _PancakVisible);
+        }
+
+        public void NewAxis (int y)
+        {
+            _PancakVisible.Y = y;
         }
 
 
