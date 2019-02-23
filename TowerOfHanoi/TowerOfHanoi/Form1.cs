@@ -103,7 +103,7 @@ namespace TowerOfHanoi
                 TimerMove.Enabled = true;
             }
         }
-
+ 
         private void ManualControl_CheckedChanged(object sender, EventArgs e)
         {
             if (ManualControl.Checked == true)
